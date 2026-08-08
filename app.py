@@ -1,3 +1,4 @@
+from init_db import create_tables
 import os
 import sqlite3
 import uuid
@@ -6,6 +7,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
+create_tables()
 # Security: Secret key for session management and anti-tampering
 app.secret_key = os.environ.get('SECRET_KEY', 'super_secret_bus_pass_key_2026')
 
